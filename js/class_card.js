@@ -66,10 +66,22 @@ class Card
         this.container.y = y;
     }
 
+    SetTemplate(path_template)
+    {
+        this.path_template = path_template;
+        this.template_texture = PIXI.Texture.from(this.path_template);
+        this.template_obj.texture = this.template_texture;
+    }
+
     SetText(text)
     {
         this.text = text;
         this.text_obj.text = this.text;
+    }
+
+    SetColorText(color_hexadecimal)
+    {
+        this.text_obj.style.fill = color_hexadecimal;
     }
 
     SetArt(path_art)
